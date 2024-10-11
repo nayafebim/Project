@@ -1,0 +1,43 @@
+/* Initial style for center-aligned map */
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style for the map and table when a province is selected */
+#container.map-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  height: auto;
+}
+
+#result {
+  width: 50%; /* กำหนดขนาดแผนที่ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  flex: 1; /* ให้แผนที่ใช้พื้นที่ฝั่งซ้ายหลังการเลือกจังหวัด */
+}
+
+#details {
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Show table after selection */
+#container.map-left #details {
+  display: block;
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* On mouse hover, lighten province color */
+path:hover {
+  fill-opacity: 0.7; /* ปรับความโปร่งแสงเมื่อ hover */
+  cursor: pointer; /* เปลี่ยนเม้าส์เป็น pointer เมื่อ hover */
+}
